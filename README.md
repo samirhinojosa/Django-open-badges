@@ -9,7 +9,7 @@ Simple **Backend** and **Back-office** application for managing a **blog** throu
 If you would like to contribute with the project, below you'll see how to start it with docker.
 1.  Install Docker and Docker Compose.
 2.  In the root of the project's directory run in shell, the command
-```
+```docker
 docker-compose up
 ```
 3.  In another shell, do the migrations
