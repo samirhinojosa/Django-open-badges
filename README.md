@@ -11,7 +11,7 @@ If you would like to contribute with the project, below you'll see how to start 
 ```
 docker-compose up
 ```
-3.  In another shell, do the migrations:
+3.  In another shell, do the migrations
 ```
 python manage.py makemigrations
 python manage.py migrate
