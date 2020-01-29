@@ -13,12 +13,12 @@ If you would like to contribute with the project, below you'll see how to start 
 docker-compose up
 ```
 3.  In another shell, do the migrations
-```
+```python
 python manage.py makemigrations
 python manage.py migrate
 ```
 4.  Create an admin user
-```
+```python
 python manage.py createsuperuser
 ```
 
