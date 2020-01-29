@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+    db:
+        image: 'postgres'
+        restart: always
+        ports:
+            - '5432:5432'
+        environment:
+            - POSTGRES_PASSWORD=root
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+    web:
+        build: .
+        command: python /usr/src/app/manage.py runserver 0.0.0.0:8000
+        volumes:
+            - .:/usr/src/app
+        ports:
+            - "8000:8000"
+        links:
+            - 'db'
+
+volumes:
+    postgres_data:
