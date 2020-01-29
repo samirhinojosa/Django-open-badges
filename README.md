@@ -6,18 +6,17 @@ Simple **Backend** and **Back-office** application for managing a **blog** throu
 ## Development and Contributing
 
 If you would like to contribute with the project, below you'll see how to start it with docker.
-
-1. Install Docker and Docker Compose.
-2. In the root of the project's directory run in shell, the command
+1.  Install Docker and Docker Compose.
+2.  In the root of the project's directory run in shell, the command
 ```
 docker-compose up
 ```
-3. In another shell, do the migrations:
+3.  In another shell, do the migrations:
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
-4. Create an admin user
+4.  Create an admin user
 ```
 python manage.py createsuperuser
 ```
