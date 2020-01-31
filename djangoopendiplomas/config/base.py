@@ -22,15 +22,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'p$wydq2k^1=r-v8ca-ha+6i*9qhe4w2x#v_ro7ys@jjew4r0d!'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
-INSTALLED_APPS = [
+# Application definition
+
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +35,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+THIRD_PARTY_APPS = [
+]
+
+PROJECT_APPS = [
+]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -68,21 +74,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djangoopendiplomas.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-DATABASES = {
-	'default': {
-    	'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    	'NAME': 'project',
-    	'USER': 'project',
-    	'PASSWORD': 'project',
-    	'HOST': 'db',
-    	'PORT': '5432',
-	}
-}
 
 
 # Password validation
