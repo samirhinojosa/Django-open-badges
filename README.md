@@ -34,5 +34,5 @@ python manage.py migrate
 ```python
 python manage.py createsuperuser
 ```
-----
+---
 **Django Open Diplomas**  is an open source project, so contributing is as easy as forking the project on either of these sites and committing your enhancements. Please, don't forget include always tests. If you are fixing a bug, add a test that breaks before your patch and works after.
