@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+    db:
+        image: 'postgres'
+        restart: always
+        ports:
+            - '5432:5432'
+        environment:
+            - POSTGRES_PASSWORD=root
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+    web:
+        build:
+            context: ..
+            dockerfile: .devcontainer/Dockerfile
+        ports:
+            - "8000:8000"
+        volumes:
+            - ~/.gitconfig:/root/.gitconfig
+            - ..:/usr/src/app
+        command: sleep infinity
+        environment:
+            DJANGO_SETTINGS_MODULE: djangoopendiplomas.settings
+        links:
+            - 'db'
+
+volumes:
+    postgres_data:
