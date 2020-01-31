@@ -1,3 +1,11 @@
+### Project's folders ###
+/djangoopendiplomas/media/*
+/djangoopendiplomas/static/*
+
+# exception to the rule
+!/djangoopendiplomas/media/.gitkeep 
+!/djangoopendiplomas/static/.gitkeep 
+
 ### Django ###
 *\migrations*
 

@@ -25,8 +25,6 @@ SECRET_KEY = 'p$wydq2k^1=r-v8ca-ha+6i*9qhe4w2x#v_ro7ys@jjew4r0d!'
 
 # Application definition
 
-# Application definition
-
 DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,10 +38,27 @@ THIRD_PARTY_APPS = [
 ]
 
 PROJECT_APPS = [
+    'apps.diplomas',
+    'apps.core',
+    'apps.customusers',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
+#Order of Apps into the project
+
+APP_ORDER = [
+    'diplomas',
+    'customusers'
+    'utils',
+]
+
+#Order of links into the admin´s views/templates
+
+LINKS_ORDERING = {
+    'Groups': 1,
+    'Users': 2
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,6 +91,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'djangoopendiplomas.wsgi.application'
 
 
+# Custom user
+
+AUTH_USER_MODEL = 'customusers.User' 
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -95,6 +115,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Backoffice's login page
+
+LOGIN_URL = '/myadmin/login/?next=/'
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -112,4 +137,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+# Media files of apps (Images)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+# Static files of apps (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+# Static files of the project (CSS, JavaScript, Images)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static_files'),
+]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+# List of finder classes that know how to find static files in
+# various locations.
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+]

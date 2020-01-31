@@ -12,7 +12,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 DATABASES = {
 	'default': {
     	'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    	'NAME': 'project',
+    	'NAME': 'open_diplomas',
     	'USER': 'project',
     	'PASSWORD': 'project',
     	'HOST': 'db',
