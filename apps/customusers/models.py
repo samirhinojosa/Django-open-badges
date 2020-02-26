@@ -1,4 +1,3 @@
-from django.db import models
 from django.contrib.auth.models import AbstractUser, Group
 
 
@@ -6,10 +5,8 @@ class User(AbstractUser):
     """
     Store a custom user
     """
-    pass
 
 class ProxyUser(User):
-    pass
 
     class Meta:
         app_label = 'auth'
@@ -18,7 +15,6 @@ class ProxyUser(User):
         verbose_name_plural = 'Users'
 
 class ProxyGroup(Group):
-    pass
 
     class Meta:
         app_label = 'auth'

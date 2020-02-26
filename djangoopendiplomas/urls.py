@@ -1,18 +1,17 @@
-from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from apps.core.admin import open_diplomas_admin_site
+from apps.core.admin import OPEN_DIPLOMAS_ADMIN_SITE
 
 
-open_diplomas_admin_site.site_header = "Open Diplomas's Admin"
-open_diplomas_admin_site.site_title = "Open Diplomas's Admin Portal"
-open_diplomas_admin_site.index_title = "Welcome to Open Diplomas's Portal"
+OPEN_DIPLOMAS_ADMIN_SITE.site_header = "Open Diplomas's Admin"
+OPEN_DIPLOMAS_ADMIN_SITE.site_title = "Open Diplomas's Admin Portal"
+OPEN_DIPLOMAS_ADMIN_SITE.index_title = "Welcome to Open Diplomas's Portal"
 
 
 urlpatterns = [
     path('', include('apps.core.urls')),
-    path('myadmin/', open_diplomas_admin_site.urls),
+    path('myadmin/', OPEN_DIPLOMAS_ADMIN_SITE.urls),
 ]
 
 

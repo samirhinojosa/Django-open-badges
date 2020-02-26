@@ -15,7 +15,7 @@ class CSSAdminMixin(object):
         css = {
             'all': ('css/extra-style.css',),
         }
-        
+
 
 class FilterUserAdmin(admin.ModelAdmin):
     """
@@ -24,7 +24,7 @@ class FilterUserAdmin(admin.ModelAdmin):
     class Meta:
         abstract = True
 
-    def get_queryset(self, request): 
+    def get_queryset(self, request):
         qs = super(FilterUserAdmin, self).get_queryset(request)
         if request.user.is_superuser:
             return qs.filter()
@@ -48,13 +48,13 @@ class OpenDiplomasAdminSite(AdminSite):
             app["models"].sort(key=lambda x: settings.LINKS_ORDERING[x["name"]])
 
         return app_list
-    
+
     def app_index(self, request, app_label, extra_context=None):
         """
         Return a sorted list of all models within each app.
         """
         app_dict = self._build_app_dict(request, app_label)
-        
+
         if not app_dict:
             raise Http404("The requested admin page does not exist.")
 
@@ -77,4 +77,4 @@ class OpenDiplomasAdminSite(AdminSite):
         ], context)
 
 
-open_diplomas_admin_site = OpenDiplomasAdminSite(name="open_diplomas_admin")
+OPEN_DIPLOMAS_ADMIN_SITE = OpenDiplomasAdminSite(name="open_diplomas_admin")

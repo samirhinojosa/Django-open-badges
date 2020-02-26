@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'djangoopendiplomas.wsgi.application'
 
 # Custom user
 
-AUTH_USER_MODEL = 'customusers.User' 
+AUTH_USER_MODEL = 'customusers.User'
 
 
 # Password validation

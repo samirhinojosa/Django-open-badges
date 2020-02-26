@@ -1,9 +1,8 @@
-from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import User
 
 
-class UserCreationForm(UserCreationForm):
+class MyUserCreationForm(UserCreationForm):
     """
     Added creation of the user's form.
     """
@@ -11,7 +10,8 @@ class UserCreationForm(UserCreationForm):
         model = User
         fields = ["username", "email"]
 
-class UserChangeForm(UserChangeForm):
+
+class MyUserChangeForm(UserChangeForm):
     """
     Added updating of the user's form.
     """

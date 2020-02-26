@@ -14,7 +14,10 @@
 		"python.pythonPath": "/usr/local/bin/python",
 		"python.linting.enabled": true,
 		"python.linting.pylintEnabled": true,
-		"python.linting.pylintPath": "/usr/local/bin/pylint"
+		"python.linting.pylintPath": "/usr/local/bin/pylint",
+		"python.linting.pylintArgs": [
+			"--disable=C0111","--load-plugins", "pylint_django"
+		]
 	},
 
 	// Uncomment the next line if you want start specific services in your Docker Compose config.

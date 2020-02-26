@@ -1,0 +1,7 @@
+https://docs.djangoproject.com/en/3.0/releases/3.0/
+https://docs.djangoproject.com/en/3.0/topics/db/models/
+https://docs.djangoproject.com/en/3.0/ref/models/options/#django.db.models.Options.constraints
+https://docs.djangoproject.com/en/3.0/ref/models/fields/#field-choices-enum-types
+https://docs.djangoproject.com/en/3.0/ref/contrib/admin/#django.contrib.admin.ModelAdmin.list_display
+https://docs.djangoproject.com/en/3.0/intro/reusable-apps/
+https://learndjango.com/blog/essential-django-3rd-party-packages

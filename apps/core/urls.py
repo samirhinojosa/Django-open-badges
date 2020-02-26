@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.IndexRedirectView.as_view()),  
+    path('', views.IndexRedirectView.as_view()),
 ]

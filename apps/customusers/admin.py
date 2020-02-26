@@ -1,24 +1,23 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from apps.core.admin import open_diplomas_admin_site
-from .forms import UserCreationForm, UserChangeForm
+from apps.core.admin import OPEN_DIPLOMAS_ADMIN_SITE
+from .forms import MyUserCreationForm, MyUserChangeForm
 from .models import User, ProxyUser, ProxyGroup
 
 
-class UserAdmin(UserAdmin):
+class MyUserAdmin(UserAdmin):
     """
-    customizing authentication user 
+    customizing authentication user
     """
-    add_form = UserCreationForm
-    form = UserChangeForm
+    add_form = MyUserCreationForm
+    form = MyUserChangeForm
     model = User
     list_display = [
         "username", "email", "first_name", "last_name", "is_staff"
     ]
 
-#admin.site.register(User, UserAdmin)
-admin.site.register(ProxyUser, UserAdmin)
+admin.site.register(ProxyUser, MyUserAdmin)
 
 #Open Diplomas's admin customed
-open_diplomas_admin_site.register(ProxyUser, UserAdmin)
-open_diplomas_admin_site.register(ProxyGroup)
+OPEN_DIPLOMAS_ADMIN_SITE.register(ProxyUser, MyUserAdmin)
+OPEN_DIPLOMAS_ADMIN_SITE.register(ProxyGroup)
