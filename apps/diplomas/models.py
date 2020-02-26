@@ -21,9 +21,8 @@ class Issuer(TimeStampedAuthModel):
                               help_text='Image of the issuer')
     image_thumb = models.ImageField('Thumbnail', max_length=250, blank=True,
                                     upload_to=issuer_image_thumb, help_text='Thumbnail of the post')
-    email = models.EmailField('Email', max_length=100, blank=True, help_text='Email of the issuer')
-    location = models.CharField('Location', max_length=150, blank=True,
-                                help_text='Location of the issuer')
+    email = models.EmailField('Email', max_length=100, help_text='Email of the issuer')
+    location = models.CharField('Location', max_length=150, help_text='Location of the issuer')
 
     class Meta:
         ordering = ['-created']

@@ -4,9 +4,9 @@ from django.conf.urls.static import static
 from apps.core.admin import OPEN_DIPLOMAS_ADMIN_SITE
 
 
-OPEN_DIPLOMAS_ADMIN_SITE.site_header = "Open Diplomas's Admin"
-OPEN_DIPLOMAS_ADMIN_SITE.site_title = "Open Diplomas's Admin Portal"
-OPEN_DIPLOMAS_ADMIN_SITE.index_title = "Welcome to Open Diplomas's Portal"
+OPEN_DIPLOMAS_ADMIN_SITE.site_header = "Django Open Diplomas Admin"
+OPEN_DIPLOMAS_ADMIN_SITE.site_title = "DOP Portal"
+OPEN_DIPLOMAS_ADMIN_SITE.index_title = "Welcome to Django Open Diplomas"
 
 
 urlpatterns = [

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -20,6 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = 'p$wydq2k^1=r-v8ca-ha+6i*9qhe4w2x#v_ro7ys@jjew4r0d!'
 
 
@@ -49,16 +51,23 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 APP_ORDER = [
     'diplomas',
-    'customusers'
-    'utils',
+    'customusers',
+    'core',
 ]
 
 #Order of links into the admin´s views/templates
 
 LINKS_ORDERING = {
-    'Groups': 1,
-    'Users': 2
+    'Issuers': 1,
+    'Groups': 2,
+    'Users': 3
 }
+
+
+# Custom user
+
+AUTH_USER_MODEL = 'customusers.User'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,7 +84,7 @@ ROOT_URLCONF = 'djangoopendiplomas.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,11 +98,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djangoopendiplomas.wsgi.application'
-
-
-# Custom user
-
-AUTH_USER_MODEL = 'customusers.User'
 
 
 # Password validation
