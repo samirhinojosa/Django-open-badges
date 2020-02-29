@@ -18,6 +18,6 @@ class MyUserAdmin(UserAdmin):
 
 admin.site.register(ProxyUser, MyUserAdmin)
 
-#Open Diplomas's admin customed
+#Open Diplomas's admin
 OPEN_DIPLOMAS_ADMIN_SITE.register(ProxyUser, MyUserAdmin)
 OPEN_DIPLOMAS_ADMIN_SITE.register(ProxyGroup)

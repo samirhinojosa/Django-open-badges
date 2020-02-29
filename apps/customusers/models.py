@@ -6,6 +6,10 @@ class User(AbstractUser):
     Store a custom user
     """
 
+    class Meta:
+        db_table = 'auth_user'
+
+
 class ProxyUser(User):
 
     class Meta:

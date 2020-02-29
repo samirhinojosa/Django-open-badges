@@ -5,3 +5,20 @@ https://docs.djangoproject.com/en/3.0/ref/models/fields/#field-choices-enum-type
 https://docs.djangoproject.com/en/3.0/ref/contrib/admin/#django.contrib.admin.ModelAdmin.list_display
 https://docs.djangoproject.com/en/3.0/intro/reusable-apps/
 https://learndjango.com/blog/essential-django-3rd-party-packages
+
+https://secrethub.io/integrations/django/
+https://www.youtube.com/watch?v=SRYBDmJlIck&feature=youtu.be
+https://www.youtube.com/channel/UCGFnqWaBEHVzPD40PuH7vbg/videos
+
+COVERAGE por python
+
+
+""" class Meta:
+    db_table = 'auth_user' """
+
+
+
+
+https://docs.djangoproject.com/en/3.0/ref/models/options/#django.db.models.Options.constraints
+https://www.imsglobal.org/sites/default/files/Badges/OBv2p0Final/index.html#Profile
+https://openbadges.org/developers/

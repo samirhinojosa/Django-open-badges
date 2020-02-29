@@ -63,7 +63,6 @@ LINKS_ORDERING = {
     'Users': 3
 }
 
-
 # Custom user
 
 AUTH_USER_MODEL = 'customusers.User'
