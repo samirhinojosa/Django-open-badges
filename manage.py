@@ -5,8 +5,8 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangoopendiplomas.settings')
-    if os.environ.get('DJANGO_SETTINGS_MODULE') == 'djangoopendiplomas.settings.development':
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangoopendiplomas.settings")
+    if os.environ.get("DJANGO_SETTINGS_MODULE") == "djangoopendiplomas.settings.development":
         from django.core.management.commands.runserver import Command as runserver
         runserver.default_addr = "0.0.0.0"
     try:
@@ -20,5 +20,5 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

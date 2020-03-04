@@ -10,6 +10,11 @@ https://secrethub.io/integrations/django/
 https://www.youtube.com/watch?v=SRYBDmJlIck&feature=youtu.be
 https://www.youtube.com/channel/UCGFnqWaBEHVzPD40PuH7vbg/videos
 
+
+https://dev.to/mkdev/how-to-cover-django-application-with-unit-tests-4ei3
+https://softwarecrafters.io/django/testing-modelos
+https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Testing
+https://lukewickstead.wordpress.com/2015/07/16/django-testing/
 COVERAGE por python
 
 
@@ -22,3 +27,12 @@ COVERAGE por python
 https://docs.djangoproject.com/en/3.0/ref/models/options/#django.db.models.Options.constraints
 https://www.imsglobal.org/sites/default/files/Badges/OBv2p0Final/index.html#Profile
 https://openbadges.org/developers/
+
+reverse model get_absolut_url
+https://en.proft.me/2014/10/12/reversing-admin-urls-django/
+
+
+python manage shell
+https://djangobook.com/mdj2-models/
+http://www.learningaboutelectronics.com/Articles/How-to-access-and-use-the-Python-shell-with-Django.php
+https://medium.com/@ksarthak4ever/django-models-and-shell-8c48963d83a3

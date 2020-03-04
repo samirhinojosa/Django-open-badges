@@ -13,7 +13,7 @@ class CSSAdminMixin(object):
     """
     class Media:
         css = {
-            'all': ('css/extra-style.css',),
+            "all": ("css/extra-style.css",),
         }
 
 

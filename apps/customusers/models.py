@@ -7,21 +7,21 @@ class User(AbstractUser):
     """
 
     class Meta:
-        db_table = 'auth_user'
+        db_table = "auth_user"
 
 
 class ProxyUser(User):
 
     class Meta:
-        app_label = 'auth'
+        app_label = "auth"
         proxy = True
-        verbose_name = 'User'
-        verbose_name_plural = 'Users'
+        verbose_name = "User"
+        verbose_name_plural = "Users"
 
 class ProxyGroup(Group):
 
     class Meta:
-        app_label = 'auth'
+        app_label = "auth"
         proxy = True
-        verbose_name = 'Group'
-        verbose_name_plural = 'Groups'
+        verbose_name = "Group"
+        verbose_name_plural = "Groups"

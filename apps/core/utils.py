@@ -12,7 +12,7 @@ def compress_image(image):
     im_io = BytesIO()
 
     #Saving the image
-    img.save(im_io, format='PNG', quality=100)
+    img.save(im_io, format="PNG", quality=100)
     image_optimized = File(im_io, name=image.name)
 
     return image_optimized
@@ -36,7 +36,7 @@ def thumbnail_image(image):
     img = img.resize((basewidth, hsize), Image.ANTIALIAS)
 
     #Saving the image
-    img.save(im_io, format='PNG', quality=100)
+    img.save(im_io, format="PNG", quality=100)
     image_thumbnail = File(im_io, name=image.name)
 
     return image_thumbnail
@@ -65,7 +65,7 @@ def create_img_linkedin(image):
     img_width, img_height = img.size
 
     #Creating a new image
-    img_badge_in = Image.new('RGB', (width, height), color='white')
+    img_badge_in = Image.new("RGB", (width, height), color="white")
 
     #Calculating the ubication of the badge over the new image
     offset = ((width - img_width) // 2, (height - img_height) // 2)
@@ -75,7 +75,7 @@ def create_img_linkedin(image):
 
     #Saving the image
     im_io = BytesIO()
-    img_badge_in.save(im_io, format='PNG', quality=100)
+    img_badge_in.save(im_io, format="PNG", quality=100)
     img_badge_in = File(im_io, name=image.name)
 
     return img_badge_in
