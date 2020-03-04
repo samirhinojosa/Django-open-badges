@@ -30,13 +30,6 @@ class Issuer(TimeStampedAuthModel):
         verbose_name = "Issuer"
         verbose_name_plural = "Issuers"
 
-    def image_url(self):
-        return "%s" % (self.image)
-
-    def image_thumb_url(self):
-       # return "%s%s" % (settings.MEDIA_URL, self.image_thumb)
-        return "%s" % (self.image_thumb)
-
     def __str__(self):
         return self.name
 
