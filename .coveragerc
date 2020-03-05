@@ -1,0 +1,20 @@
+[run]
+omit =
+    manage.py
+    djangoopendiplomas/wsgi.py
+    djangoopendiplomas/asgi.py
+    *__init__.py
+    */migrations/*
+    */tests/*
+    *tests.py
+
+[report]
+exclude_lines =
+    if settings.DEBUG
+    #raise AssertionError
+    #raise NotImplementedError
+    #if 0:
+    #if __name__ == .__main__.:
+    #pragma: no cover
+    #def __repr__
+    #if self.debug:
