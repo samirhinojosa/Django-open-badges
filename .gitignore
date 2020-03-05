@@ -1,6 +1,7 @@
 ### Project's folders ###
 /djangoopendiplomas/media/*
 /djangoopendiplomas/static/*
+/local_resources
 
 # exception to the rule
 !/djangoopendiplomas/media/.gitkeep 
