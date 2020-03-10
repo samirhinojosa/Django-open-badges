@@ -1,6 +1,7 @@
 # Django Open Diplomas
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/68e59d6c044b46a0b8868df59cf05b61)](https://app.codacy.com/manual/samirhinojosa/django-open-diplomas?utm_source=github.com&utm_medium=referral&utm_content=samirhinojosa/django-open-diplomas&utm_campaign=Badge_Grade_Dashboard)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Coverage Status](https://coveralls.io/repos/github/samirhinojosa/Django-open-template/badge.svg?branch=master)](https://coveralls.io/github/samirhinojosa/Django-open-template?branch=master)
 
 Simple **Backend** and **Back-office** application to manage the creation and granting of diplomas and badges through Django framework
 
