@@ -7,9 +7,9 @@ class IssuerAdmin(admin.ModelAdmin, CSSAdminMixin):
     """
     Django admin of Issuers
     """
-    list_display = (
+    list_display = [
         "thumbnail", "name", "created", "created_by"
-    )
+    ]
     list_display_links = [
         "thumbnail", "name"
     ]

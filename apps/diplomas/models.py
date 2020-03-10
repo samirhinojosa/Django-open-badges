@@ -37,8 +37,8 @@ class Issuer(TimeStampedAuthModel):
         self.slug = slugify(self.name)
 
         if self.created:
-            orig = Issuer.objects.get(pk=self.pk)
-            if orig.image != self.image:
+            original = Issuer.objects.get(pk=self.pk)
+            if original.image != self.image:
                 self.image = compress_image(self.image)
                 self.image_thumb = thumbnail_image(self.image)
         else:

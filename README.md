@@ -12,12 +12,21 @@ If you would like to contribute with the project, below you'll see how to start 
 ```docker
 docker-compose up
 ```
-3.  In another shell, do the migrations
+3.  In another shell, prepare the migrations based on the apps
 ```python
-python manage.py makemigrations
-python manage.py migrate
+python manage.py makemigrations customusers
+python manage.py makemigrations diplomas
 ```
-4.  Create an admin user
+4.  Make the migrations in the order below. 
+```python
+python manage.py migrate customusers
+python manage.py migrate auth
+python manage.py migrate contenttypes
+python manage.py migrate admin
+python manage.py migrate sessions
+python manage.py migrate diplomas
+```
+5.  Create an admin user
 ```python
 python manage.py createsuperuser
 ```
@@ -25,12 +34,21 @@ python manage.py createsuperuser
 ### With Visual Studio Code - Insiders
 1.  Install Docker and Docker Compose
 2. Open the project with VSC - Insiders
-3.  In a bash in VSC's terminal, do the migrations
+3.  In a bash in VSC's terminal, prepare the migrations based on the apps
 ```python
-python manage.py makemigrations
-python manage.py migrate
+python manage.py makemigrations customusers
+python manage.py makemigrations diplomas
 ```
-4.  Create an admin user
+4.  Make the migrations in the order below. 
+```python
+python manage.py migrate customusers
+python manage.py migrate auth
+python manage.py migrate contenttypes
+python manage.py migrate admin
+python manage.py migrate sessions
+python manage.py migrate diplomas
+```
+5.  Create an admin user
 ```python
 python manage.py createsuperuser
 ```
