@@ -33,7 +33,7 @@ python manage.py createsuperuser
 
 ### With Visual Studio Code - Insiders
 1.  Install Docker and Docker Compose
-2. Open the project with VSC - Insiders
+2.  Open the project with VSC - Insiders
 3.  In a bash in VSC's terminal, prepare the migrations based on the apps
 ```python
 python manage.py makemigrations customusers
