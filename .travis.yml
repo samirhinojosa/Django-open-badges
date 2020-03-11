@@ -4,7 +4,6 @@ python:
 
 services:
   - docker
-#    - postgresql
 
 install:
   - "pip install -r requirements/requirements.txt" 
@@ -13,4 +12,5 @@ install:
 before_script: pip install docker-compose
 
 script:
-  - docker-compose run web "python manage.py test"
+  - docker-compose up --build
+  - docker-compose run --rm web sh -c "coverage run --source='.' manage.py test apps"
