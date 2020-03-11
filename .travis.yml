@@ -9,7 +9,7 @@ env:
   - DJANGO=3.0.3 DB=postgresql
 
 before_install:
-  - export DJANGO_SETTINGS_MODULE=djangoopendiplomas.config.development
+  - export DJANGO_SETTINGS_MODULE=djangoopendiplomas.settings.development
 
 install:
   - "pip install -r requirements/requirements.txt" 
