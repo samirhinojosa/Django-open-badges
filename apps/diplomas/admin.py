@@ -5,3 +5,4 @@ from .admins.issuers import IssuerAdmin
 
 
 OPEN_DIPLOMAS_ADMIN_SITE.register(Issuer, IssuerAdmin)
+

@@ -42,7 +42,6 @@ THIRD_PARTY_APPS = [
 PROJECT_APPS = [
     "apps.diplomas",
     "apps.core",
-    "apps.customusers",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
@@ -51,7 +50,6 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 APP_ORDER = [
     "diplomas",
-    "customusers",
     "core",
 ]
 
@@ -65,7 +63,7 @@ LINKS_ORDERING = {
 
 # Custom user
 
-AUTH_USER_MODEL = "customusers.User"
+AUTH_USER_MODEL = "core.User"
 
 
 MIDDLEWARE = [

@@ -3,6 +3,8 @@ omit =
     manage.py
     djangoopendiplomas/wsgi.py
     djangoopendiplomas/asgi.py
+    djangoopendiplomas/settings/base.py
+    djangoopendiplomas/settings/development.py
     *__init__.py
     */migrations/*
     */tests/*

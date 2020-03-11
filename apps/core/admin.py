@@ -5,6 +5,8 @@ from django.http import Http404
 from django.contrib.admin import AdminSite
 from django.utils.translation import gettext as _
 from django.template.response import TemplateResponse
+from .models import User, ProxyUser, ProxyGroup
+from .admins.users import MyUserAdmin
 
 
 class CSSAdminMixin(object):
@@ -78,3 +80,6 @@ class OpenDiplomasAdminSite(AdminSite):
 
 
 OPEN_DIPLOMAS_ADMIN_SITE = OpenDiplomasAdminSite(name="open_diplomas_admin")
+
+OPEN_DIPLOMAS_ADMIN_SITE.register(ProxyUser, MyUserAdmin)
+OPEN_DIPLOMAS_ADMIN_SITE.register(ProxyGroup)
