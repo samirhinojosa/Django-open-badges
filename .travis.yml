@@ -3,9 +3,14 @@ python:
   - "3.8.1"
 
 services:
-  -docker
+  - docker
+#    - postgresql
+
+install:
+  - "pip install -r requirements/requirements.txt" 
+  - "pip install -r requirements/development.txt"
 
 before_script: pip install docker-compose
 
 script:
-  - docker-compose run --rm web sh -c "python manage.py test"
+  - docker-compose run web "python manage.py test"
