@@ -35,6 +35,7 @@ class IssuerAdmin(admin.ModelAdmin, CSSAdminMixin):
         }),
     ]
 
+    @classmethod
     def thumbnail(self, obj):
         """
         Get the issuer's thumbnail in the admin
@@ -50,6 +51,7 @@ class IssuerAdmin(admin.ModelAdmin, CSSAdminMixin):
                 '<img src="/static/not-available.png" width="75" height="75" >'
             )
 
+    @classmethod
     def slug(self, obj):
         return obj.user.slug
 
