@@ -1,10 +1,11 @@
 language: python
 python:
   - "3.8.1"
-install:
-  - "pip install -r requirements/requirements.txt" 
-  - "pip install -r requirements/development.txt"
-  script:
-  coverage run --source='.' manage.py test apps
-after_success:
-  scoveralls
+
+services:
+  -docker
+
+before_script: pip install docker-compose
+
+script:
+  - docker-compose run --rm web sh -c "python manage.py test"
