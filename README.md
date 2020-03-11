@@ -38,12 +38,12 @@ python manage.py createsuperuser
 2.  Open the project with VSC - Insiders
 3.  In a bash in VSC's terminal, prepare the migrations based on the apps
 ```python
-python manage.py makemigrations customusers
+python manage.py makemigrations core
 python manage.py makemigrations diplomas
 ```
 4.  Make the migrations in the order below. 
 ```python
-python manage.py migrate customusers
+python manage.py migrate core
 python manage.py migrate auth
 python manage.py migrate contenttypes
 python manage.py migrate admin
