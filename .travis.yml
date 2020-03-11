@@ -3,15 +3,17 @@ python:
   - "3.8.1"
 
 services:
-  - docker
+  - postgresql
+
+env:
+  -DJANGO=3.0.3 DB=postgresql
 
 install:
   - "pip install -r requirements/requirements.txt" 
   - "pip install -r requirements/development.txt"
 
-before_script: pip install docker-compose
+before_script: 
+  - postgresql -e 'create database test;' -u root
 
 script:
-  - docker-compose up --build
-  - docker run -e POSTGRES_USER=project -e POSTGRES_PASSWORD=project -e POSTGRES_DB=dop library/postgres
-  - docker-compose run --rm web sh -c "coverage run --source='.' manage.py test apps"
+  - coverage run --source='.' manage.py test apps
