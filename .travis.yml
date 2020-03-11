@@ -6,7 +6,7 @@ services:
   - postgresql
 
 env:
-  - DJANGO=3.0.3 DB=mysql
+  - DJANGO=3.0.3 DB=postgresql
 
 before_install:
   - export DJANGO_SETTINGS_MODULE=djangoopendiplomas.config.development
@@ -19,4 +19,14 @@ before_script:
   - psql -c "CREATE DATABASE test;" -U postgres
 
 script:
+  - python manage.py makemigrations customusers
+  - python manage.py makemigrations diplomas
+
+  - python manage.py migrate customusers
+  - python manage.py migrate auth
+  - python manage.py migrate contenttypes
+  - python manage.py migrate admin
+  - python manage.py migrate sessions
+  - python manage.py migrate diplomas
+
   - coverage run --source='.' manage.py test apps
