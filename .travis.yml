@@ -10,7 +10,6 @@ env:
 
 before_install:
   - export DJANGO_SETTINGS_MODULE=djangoopendiplomas.settings.development
-  - COVERALLS_REPO_TOKEN=c2otyqkBgtcmGzAZCw7LL3CuKZc3LyxnI
 
 install:
   - "pip install -r requirements/requirements.txt" 

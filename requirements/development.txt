@@ -2,4 +2,4 @@ ptvsd==4.3.2
 pylint==2.4.4
 pylint-django==2.0.14
 coverage==5.0.3
-python-coveralls==2.9.3
+coveralls==1.11.1
