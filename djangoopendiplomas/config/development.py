@@ -1,4 +1,4 @@
-from .base import *
+from djangoopendiplomas.config.base import *
 
 # SECURITY WARNING: donst run with debug turned on in production!
 DEBUG = True
