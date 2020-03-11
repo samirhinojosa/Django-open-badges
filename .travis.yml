@@ -3,17 +3,17 @@ python:
   - "3.8.1"
 
 services:
-  - postgresql
+  - mysql
 
 env:
-  -DJANGO=3.0.3 DB=postgresql
+  -DJANGO=3.0.3 DB=mysql
 
 install:
   - "pip install -r requirements/requirements.txt" 
   - "pip install -r requirements/development.txt"
 
 before_script: 
-  - postgresql -e 'create database test;' -u root
+  - mysql -e 'create database test;' -u root
 
 script:
   - coverage run --source='.' manage.py test apps
