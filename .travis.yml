@@ -6,14 +6,17 @@ services:
   - mysql
 
 env:
-  -DJANGO=3.0.3 DB=mysql
+  - DJANGO=3.0.3 DB=mysql
+
+before_install:
+  - export DJANGO_SETTINGS_MODULE=djangoopendiplomas.config.development
 
 install:
   - "pip install -r requirements/requirements.txt" 
   - "pip install -r requirements/development.txt"
 
 before_script: 
-  - mysql -e 'create database test;' -u root
+  - psql  -e 'create database test;' -u postgres
 
 script:
   - coverage run --source='.' manage.py test apps
