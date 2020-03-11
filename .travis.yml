@@ -5,6 +5,6 @@ install:
   - "pip install -r requirements/requirements.txt" 
   - "pip install -r requirements/development.txt"
   script:
-  - coverage run --source='.' manage.py test apps
+  coverage run --source='.' manage.py test apps
 after_success:
-  - scoveralls
+  scoveralls
