@@ -6,6 +6,7 @@ branches:
   except:
     - development
     - initial
+    - consolidation
 
 language: python
 python:
