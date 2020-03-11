@@ -30,3 +30,6 @@ script:
   - python manage.py migrate diplomas
 
   - coverage run --source='.' manage.py test apps
+
+after_success:
+- coveralls
