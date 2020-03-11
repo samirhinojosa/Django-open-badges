@@ -1,3 +1,12 @@
+branches:
+  only:
+    - master
+
+branches:
+  except:
+    - development
+    - initial
+
 language: python
 python:
   - "3.8.1"
