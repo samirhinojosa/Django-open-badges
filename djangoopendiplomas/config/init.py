@@ -1,1 +1,0 @@
-from djangoopendiplomas.settings.base import *
