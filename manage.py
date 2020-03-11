@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangoopendiplomas.config.development")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangoopendiplomas.config")
     if os.environ.get("DJANGO_SETTINGS_MODULE") == "djangoopendiplomas.config.development":
         from django.core.management.commands.runserver import Command as runserver
         runserver.default_addr = "0.0.0.0"
