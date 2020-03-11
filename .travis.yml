@@ -29,10 +29,10 @@ before_script:
   - psql -c "CREATE DATABASE travisdb;" -U postgres
 
 script:
-  - python manage.py makemigrations customusers
+  - python manage.py makemigrations core
   - python manage.py makemigrations diplomas
 
-  - python manage.py migrate customusers
+  - python manage.py migrate core
   - python manage.py migrate auth
   - python manage.py migrate contenttypes
   - python manage.py migrate admin
