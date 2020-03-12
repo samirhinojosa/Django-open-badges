@@ -2,7 +2,10 @@ from io import BytesIO
 from PIL import Image
 from django.core.files import File
 from django.test import TestCase
-from apps.diplomas.models import Issuer
+from apps.diplomas.models import Issuer, Event, Tag
+
+
+MODELS = [Issuer, Event, Tag]
 
 
 def create_image_issuer(flag=False):
@@ -39,16 +42,18 @@ class IssuerTest(TestCase):
                                             image=image)
 
     def tearDown(self):
-        self.issuer.delete()
-
-    def test__str__(self):
-        self.assertEqual(self.issuer.__str__(), "Université Paul-Valéry")
+        for model in MODELS:
+            for obj in model.objects.all():
+                obj.delete()
 
     def test_verbose_name(self):
         self.assertEqual(str(self.issuer._meta.verbose_name), "Issuer")
 
     def test_verbose_name_plural(self):
         self.assertEqual(str(self.issuer._meta.verbose_name_plural), "Issuers")
+
+    def test__str__(self):
+        self.assertEqual(self.issuer.__str__(), "Université Paul-Valéry")
 
     def test_slug(self):
         self.assertEqual(self.issuer.slug, "universite-paul-valery")
@@ -66,5 +71,62 @@ class IssuerTest(TestCase):
         self.assertNotEqual(self.issuer.image.url, original_image.url)
 
     def test_get_absolute_url(self):
-        self.assertURLEqual(self.issuer.get_absolute_url(), "/myadmin/diplomas/issuer/2/change/")
-        
+        self.assertURLEqual(self.issuer.get_absolute_url(), "/myadmin/diplomas/issuer/6/change/")
+
+
+
+class EventTest(TestCase):
+
+    def setUp(self):
+        issuer = Issuer.objects.create(name="Université Paul-Valéry",
+                                       url="https://www.univ-montp3.fr/",
+                                       email="webmaster@univ-montp3.fr",
+                                       location="Montpellier, France")
+        tag = Tag.objects.create(name="Software Development")
+        self.event = Event.objects.create(issuer=issuer, name="Agile Methodologies",
+                                          url="https://www.univ-montp3.fr/agile-methodologies",
+                                          location="Montpellier, France")
+        self.event.tags.add(tag)
+
+    def tearDown(self):
+        for model in MODELS:
+            for obj in model.objects.all():
+                obj.delete()
+
+    def test_verbose_name(self):
+        self.assertEqual(str(self.event._meta.verbose_name), "Event")
+
+    def test_verbose_name_plural(self):
+        self.assertEqual(str(self.event._meta.verbose_name_plural), "Events")
+
+    def test__str__(self):
+        self.assertEqual(self.event.__str__(), "Agile Methodologies - Université Paul-Valéry")
+
+    def test_get_absolute_url(self):
+        self.assertURLEqual(self.event.get_absolute_url(), "/myadmin/diplomas/event/2/change/")
+
+
+class TagTest(TestCase):
+
+    def setUp(self):
+        self.tag = Tag.objects.create(name="Software Development")
+
+    def tearDown(self):
+        for model in MODELS:
+            for obj in model.objects.all():
+                obj.delete()
+
+    def test_verbose_name(self):
+        self.assertEqual(str(self.tag._meta.verbose_name), "Tag")
+
+    def test_verbose_name_plural(self):
+        self.assertEqual(str(self.tag._meta.verbose_name_plural), "Tags")
+
+    def test__str__(self):
+        self.assertEqual(self.tag.__str__(), "Software Development")
+
+    def test_slug(self):
+        self.assertEqual(self.tag.slug, "software-development")
+
+    def test_get_absolute_url(self):
+        self.assertURLEqual(self.tag.get_absolute_url(), "/myadmin/diplomas/tag/6/change/")

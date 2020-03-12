@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django.utils.translation import gettext_lazy as _
 from apps.core.models import TimeStampedAuthModel
 from apps.core.utils import compress_image, thumbnail_image
 from .helpers import issuer_image, issuer_image_thumb
@@ -50,3 +51,64 @@ class Issuer(TimeStampedAuthModel):
 
     def get_absolute_url(self):
         return reverse("admin:diplomas_issuer_change", args=[str(self.id)])
+
+
+class Tag(TimeStampedAuthModel):
+    """
+    Store a simple Tag, related to Diploma
+    """
+    name = models.CharField("Tag", max_length=150, unique=True, help_text="Name of the tag")
+    slug = models.SlugField("Slug", max_length=150, db_index=True, unique=True,
+                            help_text="Name of the tag in format URL")
+
+    class Meta:
+        ordering = ["name"]
+        verbose_name = "Tag"
+        verbose_name_plural = "Tags"
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Tag, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse("admin:diplomas_tag_change", args=[str(self.id)])
+
+
+class Event(TimeStampedAuthModel):
+    """
+    Store a event
+    Missing fields: type, alignment
+    """
+    class DiplomaType(models.TextChoices):
+        CERTIFICATE = "C", _("Certificate")
+        BADGE = "B", _("Badge")
+
+    issuer = models.ForeignKey(Issuer, on_delete=models.CASCADE, help_text="Even's issuer")
+    tags = models.ManyToManyField(Tag, related_name="events_tags", help_text="Tags of the event")
+    name = models.CharField("Event", max_length=150, help_text="Name of the event")
+    slug = models.SlugField("Slug", max_length=150, help_text="Name of the event in format URL")
+    url = models.URLField("Website", max_length=200, blank=True, help_text="Website of the even")
+    diploma_type = models.CharField(max_length=2, choices=DiplomaType.choices,
+                                    default=DiplomaType.BADGE)
+    description = models.TextField("Description", max_length=500, blank=True,
+                                   help_text="Enter a brief description of the event")
+    location = models.CharField("Location", max_length=150, blank=True,
+                                help_text="Location of the event")
+
+    class Meta:
+        ordering = ["-created"]
+        verbose_name = "Event"
+        verbose_name_plural = "Events"
+
+    def __str__(self):
+        return "%s - %s" % (self.name, self.issuer.name)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Event, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse("admin:diplomas_event_change", args=[str(self.id)])

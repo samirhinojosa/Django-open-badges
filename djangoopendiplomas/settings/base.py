@@ -57,6 +57,8 @@ APP_ORDER = [
 
 LINKS_ORDERING = {
     "Issuers": 1,
+    "Events": 1,
+    "Tags": 1,
     "Groups": 2,
     "Users": 3
 }
