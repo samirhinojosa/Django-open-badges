@@ -40,7 +40,6 @@ class IssuerAdmin(admin.ModelAdmin, CSSAdminMixin):
         """
         Get the issuer's thumbnail in the admin
         """
-
         if obj.image_thumb:
             return mark_safe(
                 '<img src="/media/{url}" width="75" height="auto" >'.format(
@@ -50,10 +49,6 @@ class IssuerAdmin(admin.ModelAdmin, CSSAdminMixin):
             return mark_safe(
                 '<img src="/static/not-available.png" width="75" height="75" >'
             )
-
-    @classmethod
-    def slug(self, obj):
-        return obj.user.slug
 
     def save_model(self, request, obj, form, change):
         if not change:

@@ -1,37 +1,13 @@
-from io import BytesIO
-from PIL import Image
-from django.core.files import File
-from django.test import TestCase
+from django.test import TestCase, TransactionTestCase
 from apps.diplomas.models import Issuer, Event, Tag
+from apps.diplomas.utils import create_image_issuer
 
 
 MODELS = [Issuer, Event, Tag]
 
 
-def create_image_issuer(flag=False):
-    """
-    Create and update an image for test this attribute in the model
-    """
-    if flag:
-        width, height = 525, 225
-        color = "white"
-    else:
-        width, height = 1050, 550
-        color = "red"
-
-    image = Image.new("RGB", (width, height), color=color)
-    im_io = BytesIO()
-    image.save(im_io, format="PNG", quality=100)
-
-    if flag:
-        image = File(im_io, name=".jpg")
-    else:
-        image = File(im_io, name=".png")
-
-    return image
-
-
-class IssuerTest(TestCase):
+class IssuerTest(TransactionTestCase):
+    reset_sequences = True
 
     def setUp(self):
         image = create_image_issuer(True)
@@ -71,11 +47,11 @@ class IssuerTest(TestCase):
         self.assertNotEqual(self.issuer.image.url, original_image.url)
 
     def test_get_absolute_url(self):
-        self.assertURLEqual(self.issuer.get_absolute_url(), "/myadmin/diplomas/issuer/6/change/")
+        self.assertURLEqual(self.issuer.get_absolute_url(), "/myadmin/diplomas/issuer/1/change/")
 
 
-
-class EventTest(TestCase):
+class EventTest(TransactionTestCase):
+    reset_sequences = True
 
     def setUp(self):
         issuer = Issuer.objects.create(name="Université Paul-Valéry",
@@ -103,10 +79,11 @@ class EventTest(TestCase):
         self.assertEqual(self.event.__str__(), "Agile Methodologies - Université Paul-Valéry")
 
     def test_get_absolute_url(self):
-        self.assertURLEqual(self.event.get_absolute_url(), "/myadmin/diplomas/event/2/change/")
+        self.assertURLEqual(self.event.get_absolute_url(), "/myadmin/diplomas/event/1/change/")
 
 
-class TagTest(TestCase):
+class TagTest(TransactionTestCase):
+    reset_sequences = True
 
     def setUp(self):
         self.tag = Tag.objects.create(name="Software Development")
@@ -129,4 +106,4 @@ class TagTest(TestCase):
         self.assertEqual(self.tag.slug, "software-development")
 
     def test_get_absolute_url(self):
-        self.assertURLEqual(self.tag.get_absolute_url(), "/myadmin/diplomas/tag/6/change/")
+        self.assertURLEqual(self.tag.get_absolute_url(), "/myadmin/diplomas/tag/1/change/")

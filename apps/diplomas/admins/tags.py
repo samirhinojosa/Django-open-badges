@@ -31,9 +31,6 @@ class TagAdmin(admin.ModelAdmin, CSSAdminMixin):
         }),
     ]
 
-    def slug(self, obj):
-        return obj.user.slug
-
     def save_model(self, request, obj, form, change):
         if not change:
             obj.created_by = request.user

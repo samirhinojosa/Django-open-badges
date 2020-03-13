@@ -11,7 +11,7 @@ class EventAdmin(admin.ModelAdmin, CSSAdminMixin):
     ]
     list_display_links = [
         "name",
-    ] 
+    ]
     list_filter = [
         "issuer__name", "diploma_type", "created",
     ]
@@ -31,9 +31,6 @@ class EventAdmin(admin.ModelAdmin, CSSAdminMixin):
             "fields": (("created", "created_by"), ("modified", "modified_by"))
         }),
     ]
-
-    def slug(self, obj):
-        return obj.user.slug
 
     def save_model(self, request, obj, form, change):
         if not change:
