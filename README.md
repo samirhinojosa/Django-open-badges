@@ -54,5 +54,12 @@ python manage.py migrate diplomas
 ```python
 python manage.py createsuperuser
 ```
+
+## Unit Test - Coverage
+
+To run coverage, execute the command below
+```python
+coverage run --source='.' manage.py test apps
+```
 ---
 **Django Open Diplomas**  is an open source project, so contributing is as easy as forking the project on either of these sites and committing your enhancements. Please, don't forget include always tests. If you are fixing a bug, add a test that breaks before your patch and works after.

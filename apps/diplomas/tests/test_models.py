@@ -1,4 +1,4 @@
-from django.test import TestCase, TransactionTestCase
+from django.test import TransactionTestCase
 from apps.diplomas.models import Issuer, Event, Tag
 from apps.diplomas.utils import create_image_issuer
 
