@@ -1,6 +1,6 @@
 # Django Open Badges
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/68e59d6c044b46a0b8868df59cf05b61)](https://app.codacy.com/manual/samirhinojosa/django-open-diplomas?utm_source=github.com&utm_medium=referral&utm_content=samirhinojosa/django-open-diplomas&utm_campaign=Badge_Grade_Dashboard)
-[![Build Status](https://travis-ci.org/samirhinojosa/Django-open-template.svg?branch=master)](https://travis-ci.org/samirhinojosa/Django-open-template)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5cd2f08bf1484f4886b61dc09e113586)](https://www.codacy.com/manual/samirhinojosa/django-open-badges?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=samirhinojosa/django-open-badges&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/samirhinojosa/Django-open-badges.svg?branch=master)](https://travis-ci.org/samirhinojosa/Django-open-badges)
 [![Coverage Status](https://coveralls.io/repos/github/samirhinojosa/Django-open-template/badge.svg?branch=master)](https://coveralls.io/github/samirhinojosa/Django-open-template?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

@@ -24,7 +24,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'dop',
+            'NAME': 'dob',
             'USER': 'project',
             'PASSWORD': 'project',
             'HOST': 'db',
