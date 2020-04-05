@@ -34,7 +34,7 @@ class FilterUserAdmin(admin.ModelAdmin):
             return qs.filter(created_by=request.user)
 
 
-class OpenDiplomasAdminSite(AdminSite):
+class OpenBadgesAdminSite(AdminSite):
     def get_app_list(self, request):
         """
         Return a sorted list of all installed apps that have been
@@ -79,7 +79,7 @@ class OpenDiplomasAdminSite(AdminSite):
         ], context)
 
 
-OPEN_DIPLOMAS_ADMIN_SITE = OpenDiplomasAdminSite(name="open_diplomas_admin")
+OPEN_BADGES_ADMIN_SITE = OpenBadgesAdminSite(name="open_badges_admin")
 
-OPEN_DIPLOMAS_ADMIN_SITE.register(ProxyUser, MyUserAdmin)
-OPEN_DIPLOMAS_ADMIN_SITE.register(ProxyGroup)
+OPEN_BADGES_ADMIN_SITE.register(ProxyUser, MyUserAdmin)
+OPEN_BADGES_ADMIN_SITE.register(ProxyGroup)

@@ -1,4 +1,4 @@
-from djangoopendiplomas.settings.base import *
+from djangoopenbadges.settings.base import *
 
 # SECURITY WARNING: donst run with debug turned on in production!
 DEBUG = True

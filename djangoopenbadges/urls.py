@@ -1,18 +1,18 @@
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from apps.core.admin import OPEN_DIPLOMAS_ADMIN_SITE
+from apps.core.admin import OPEN_BADGES_ADMIN_SITE
 
 
-OPEN_DIPLOMAS_ADMIN_SITE.site_header = "Django Open Diplomas Admin"
-OPEN_DIPLOMAS_ADMIN_SITE.site_title = "DOP Portal"
-OPEN_DIPLOMAS_ADMIN_SITE.index_title = "Welcome to Django Open Diplomas"
+OPEN_BADGES_ADMIN_SITE.site_header = "Django Open Badges Admin"
+OPEN_BADGES_ADMIN_SITE.site_title = "DOP Portal"
+OPEN_BADGES_ADMIN_SITE.index_title = "Welcome to Django Open Badges"
 
 
 urlpatterns = [
     path("", include("apps.core.urls"), name="core"),
     path("diplomas/", include("apps.diplomas.urls"), name="diplomas"),
-    path("myadmin/", OPEN_DIPLOMAS_ADMIN_SITE.urls),
+    path("myadmin/", OPEN_BADGES_ADMIN_SITE.urls),
 ]
 
 

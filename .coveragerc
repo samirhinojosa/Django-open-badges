@@ -1,10 +1,10 @@
 [run]
 omit =
     manage.py
-    djangoopendiplomas/wsgi.py
-    djangoopendiplomas/asgi.py
-    djangoopendiplomas/settings/base.py
-    djangoopendiplomas/settings/development.py
+    djangoopenbadges/wsgi.py
+    djangoopenbadges/asgi.py
+    djangoopenbadges/settings/base.py
+    djangoopenbadges/settings/development.py
     *__init__.py
     */migrations/*
     */tests/*
